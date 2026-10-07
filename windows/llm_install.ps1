@@ -221,8 +221,6 @@ function Get-VisualStudioGenerator {
 }
 
 # ============================================================================
-
-# ============================================================================
 #  Logging: every line goes to the console AND to llm_install.log, identically
 # ============================================================================
 $script:LogPath = $null
@@ -269,6 +267,8 @@ function Invoke-External ([scriptblock]$Command) {
         $ErrorActionPreference = $saved
     }
 }
+
+# ============================================================================
 #  0. Default parameter values
 # ============================================================================
 if (-not $SourceDir) {
@@ -311,6 +311,7 @@ else {
     Write-Note 'winget install --id Kitware.CMake -e      (or use the cmake bundled with Visual Studio)'
     $missing += 'cmake'
 }
+
 # git is only needed to clone the source automatically; a missing git is fine
 # when the source tree already exists
 $gitPath = Get-ToolPath 'git'
@@ -339,6 +340,7 @@ if ($Toolchain -ne 'gcc') {
     }
 }
 $msvcReady = [bool]($vsPath -and $vsGenerator -and $vsCl)
+
 # --- Intel oneAPI (SYCL) availability ---
 $oneApiCompiler = $null
 foreach ($c in 'icpx', 'icx', 'dpcpp') {
