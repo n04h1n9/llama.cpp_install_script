@@ -1,0 +1,15 @@
+# 文本文件统一按 LF 存储，避免 Windows 上被 autocrlf 改成 CRLF
+* text=auto eol=lf
+
+# Windows 批处理用 CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# 二进制
+*.png binary
+*.jpg binary
+*.ico binary
+*.gguf binary
+*.dll binary
+*.exe binary
+*.lib binary
