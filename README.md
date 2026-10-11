@@ -14,5 +14,5 @@ GNU/Linux直接运行
 
 btw，我还加了个彩蛋，大家踊跃发掘
 
-Windows部分由我的~妈妈~编写，统一位于Windows目录下，Windows食用方法参见
-滚木
+Windows部分由我的~妈妈~朋友编写，统一位于Windows目录下，Windows食用方
+法参见滚木
