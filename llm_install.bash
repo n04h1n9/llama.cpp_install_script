@@ -119,4 +119,9 @@ for i in ${models[@]}; do
     esac
 done
 
-echo "complete"
+export alias llama-cli="llama-cli -t 8 --chat-template-kwargs '{"enable_thinking":false}'"
+echo "complete
+remember to 
+export alias llama-cli="llama-cli -t 8 --chat-template-kwargs '{"enable_thinking":false}'"
+to disable noisy thinking
+"
