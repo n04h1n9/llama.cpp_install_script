@@ -1,6 +1,10 @@
 # 文本文件统一按 LF 存储，避免 Windows 上被 autocrlf 改成 CRLF
 * text=auto eol=lf
 
+# PowerShell 脚本必须保存为 UTF-8 with BOM：Windows PowerShell 5.1 对没有 BOM 的
+# 文件按系统 ANSI 代码页解码，中文变乱码后会直接导致语法错误（实测 40 个解析错误）。
+# 用 Set-Content 重写这两个脚本时记得带 BOM（pwsh 7 用 -Encoding utf8BOM）。
+
 # Windows 批处理用 CRLF
 *.cmd text eol=crlf
 *.bat text eol=crlf
